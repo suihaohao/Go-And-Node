@@ -3,11 +3,12 @@
 import (
 	"crypto/sha1"
 	"fmt"
-  "log"
+  	"log"
 )
 
 
 func main(){
-  sha1Sum := fmt.Sprintf("%x", sha1.Sum([]byte(tempStr)))
+	text := "123456text"
+  sha1Sum := fmt.Sprintf("%x", sha1.Sum([]byte(text)))
   log.Println(sha1Sum)
 }

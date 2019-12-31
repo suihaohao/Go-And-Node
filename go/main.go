@@ -25,9 +25,16 @@ func main(){
 	hmacResult := hex.EncodeToString(h.Sum(nil))
 	log.Println(hmacResult)
 	
+	getDaysOfCurrMonth()
 
 }
 
+func getDaysOfCurrMonth() int {
+	t , _ := time.Parse("200601", time.Now().Local().Format("200601"))
+	t1 , _ := time.Parse("200601", t.AddDate(0, 1, 0).Local().Format("200601"))
+	days := int(t1.Sub(t).Hours() / 24)
+	return days
+}
 
 
 
